@@ -1,28 +1,41 @@
 # Hanami::Reloader
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hanami/reloader`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'hanami-reloader'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hanami-reloader
+**Experimental** code reloading for Hanami.
 
 ## Usage
 
-TODO: Write usage instructions here
+:warning: **These instructions are complicated because `hanami-1.1.0.beta2` isn't out yet.** :warning:
+
+### 1. Setup Hanami project
+
+```shell
+gem install hanami --pre
+hanami version # this should be 1.1.0.beta1
+hanami new bookshelf && cd bookshelf
+```
+
+### 2. Prepare Gemfile
+
+Edit `Gemfile`
+
+  1. Remove `shotgun`
+  2. Use `gem "hanami", git: "https://github.com/hanami/hanami.git", branch: "develop"`
+  3. Add the following lines
+
+```ruby
+group :plugins do
+  gem "hanami-reloader", git: "https://github.com/jodosha/hanami-reloader.git"
+end
+```
+
+### 3. Setup hanami-reloader
+
+```shell
+bundle
+bundle exec hanami generate reloader
+```
+
+Now you can start the server via `bundle exec hanami server`.
 
 ## Development
 
@@ -33,3 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jodosha/hanami-reloader.
+
+## Copyright
+
+Copyright © 2017 Luca Guidi – Released under MIT License
