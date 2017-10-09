@@ -4,13 +4,13 @@
 
 ## Usage
 
-:warning: **These instructions are complicated because `hanami-1.1.0.beta2` isn't out yet.** :warning:
+:warning: **These instructions are complicated because `hanami-1.1.0` isn't out yet.** :warning:
 
 ### 1. Setup Hanami project
 
 ```shell
 gem install hanami --pre
-hanami version # this should be 1.1.0.beta1
+hanami version # this should be 1.1.0.beta3
 hanami new bookshelf && cd bookshelf
 ```
 
@@ -19,12 +19,11 @@ hanami new bookshelf && cd bookshelf
 Edit `Gemfile`
 
   1. Remove `shotgun`
-  2. Use `gem "hanami", git: "https://github.com/hanami/hanami.git", branch: "develop"`
-  3. Add the following lines
+  2. Add the following lines
 
 ```ruby
 group :plugins do
-  gem "hanami-reloader", git: "https://github.com/jodosha/hanami-reloader.git"
+  gem "hanami-reloader", "0.1.0.beta1"
 end
 ```
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "securerandom"
 require "hanami/utils/files"
 
