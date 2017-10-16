@@ -2,6 +2,6 @@
 
 module Hanami
   module Reloader
-    VERSION = "0.1.0.beta1"
+    VERSION = "0.1.0.rc1"
   end
 end

@@ -10,7 +10,7 @@
 
 ```shell
 gem install hanami --pre
-hanami version # this should be 1.1.0.beta3
+hanami version # this should be 1.1.0.rc1
 hanami new bookshelf && cd bookshelf
 ```
 
@@ -23,7 +23,7 @@ Edit `Gemfile`
 
 ```ruby
 group :plugins do
-  gem "hanami-reloader", "0.1.0.beta1"
+  gem "hanami-reloader", "0.1.0.rc1"
 end
 ```
 
