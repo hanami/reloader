@@ -28,10 +28,10 @@ Gem::Specification.new do |spec|
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
-  spec.add_dependency "hanami",     "1.1.0.rc1"
+  spec.add_dependency "hanami",     "~> 1.1"
   spec.add_dependency "guard-rack", "~> 2.2"
 
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake",    "~> 12.0"
-  spec.add_development_dependency "rspec",   "~> 3.6"
+  spec.add_development_dependency "rspec",   "~> 3.7"
 end
