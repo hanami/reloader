@@ -4,13 +4,10 @@
 
 ## Usage
 
-:warning: **These instructions are complicated because `hanami-1.1.0` isn't out yet.** :warning:
-
 ### 1. Setup Hanami project
 
 ```shell
-gem install hanami --pre
-hanami version # this should be 1.1.0.rc1
+gem install hanami
 hanami new bookshelf && cd bookshelf
 ```
 
@@ -23,7 +20,7 @@ Edit `Gemfile`
 
 ```ruby
 group :plugins do
-  gem "hanami-reloader", "0.1.0.rc1"
+  gem "hanami-reloader", "~> 0.1"
 end
 ```
 

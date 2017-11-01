@@ -26,13 +26,13 @@ module RSpec
         Bundler.with_clean_env do
           Dir.chdir(project_root) do
             # FIXME: remove this line after hanami-1.1.0.beta2 will be out.
-            Hanami::Utils::Files.replace_first_line("Gemfile", "hanami", %(gem "hanami", github: "hanami/hanami", branch: "develop"))
+            # Hanami::Utils::Files.replace_first_line("Gemfile", "hanami", %(gem "hanami", github: "hanami/hanami", branch: "develop"))
 
             Hanami::Utils::Files.append("Gemfile", %(gem "hanami-reloader", groups: [:plugins], path: "#{gem_root}"))
             Hanami::Utils::Files.append("Gemfile", %(gem "pry", groups: [:development]))
 
             # FIXME: remove this line after hanami-1.1.0.beta2 will be out.
-            system "bundle"
+            # system "bundle"
 
             begin
               yield
