@@ -10,7 +10,7 @@ module Hanami
         desc "Generate configuration for code reloading"
 
         def call(*)
-          path = Hanami.root.join("Guardfile")
+          path = Hanami.root.join(".hanami.server.guardfile")
 
           files.touch(path)
           files.append path, <<~CODE
@@ -28,7 +28,7 @@ CODE
         desc "Starts the server with code reloading (only development) reloader"
 
         def call(*)
-          exec "bundle exec guard -i"
+          exec "bundle exec guard -G .hanami.server.guardfile"
         end
       end
     end
