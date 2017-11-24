@@ -39,13 +39,13 @@ If you're upgrading from `v0.1.0` to `v0.2.0`, use `.hanami.server.guardfile` in
 
 ## Puma usage
 
-If you're using `puma`, I strongly suggest to use `guard-puma` alongside with `hanami-reloader`.
+If you're using `puma`, I **strongly** suggest to use `guard-puma` **alongside** with `hanami-reloader`.
 
 Add `guard-puma` to your `Gemfile`:
 
 ```ruby
 group :development do
-  gem 'guard-puma'
+  gem "guard-puma"
 end
 ```
 
