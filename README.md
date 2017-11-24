@@ -35,7 +35,7 @@ Now you can start the server via `bundle exec hanami server`.
 
 ## Upgrade Nodes
 
-If you're upgrading from `v0.1.0` to `v0.2.0`, yse `.hanami.server.guardfile` instead of `Guardfile`.
+If you're upgrading from `v0.1.0` to `v0.2.0`, use `.hanami.server.guardfile` instead of `Guardfile`.
 
 ## Puma usage
 
