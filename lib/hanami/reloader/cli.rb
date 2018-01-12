@@ -28,7 +28,7 @@ CODE
         desc "Starts the server with code reloading (only development) reloader"
 
         def call(*)
-          exec "bundle exec guard -G .hanami.server.guardfile"
+          exec "bundle exec guard -n f -i -G .hanami.server.guardfile"
         end
       end
     end
