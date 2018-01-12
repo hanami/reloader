@@ -70,4 +70,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/jodosh
 
 ## Copyright
 
-Copyright © 2017 Luca Guidi – Released under MIT License
+Copyright © 2017-2018 Luca Guidi – Released under MIT License
