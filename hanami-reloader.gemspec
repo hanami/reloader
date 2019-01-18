@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 lib = File.expand_path("../lib", __FILE__)
@@ -25,10 +24,10 @@ Gem::Specification.new do |spec|
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
-  spec.add_dependency "hanami",     "~> 1.1"
+  spec.add_dependency "hanami",     "~> 1.3"
   spec.add_dependency "guard-rack", "~> 2.2"
 
-  spec.add_development_dependency "bundler", "~> 1.15"
+  spec.add_development_dependency "bundler", ">= 1.6", "< 3"
   spec.add_development_dependency "rake",    "~> 12.0"
   spec.add_development_dependency "rspec",   "~> 3.7"
 end
