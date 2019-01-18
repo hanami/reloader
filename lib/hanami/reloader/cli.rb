@@ -5,12 +5,12 @@ module Hanami
     module CLI
       # Generate hanami-reloader configuration
       class Generate < Hanami::CLI::Commands::Command
-        requires "environment"
+        requires :root
 
         desc "Generate configuration for code reloading"
 
         def call(*)
-          path = Hanami.root.join(".hanami.server.guardfile")
+          path = container[:root].join(".hanami.server.guardfile")
 
           files.touch(path)
           files.append path, <<~CODE
@@ -19,12 +19,14 @@ module Hanami
               watch(%r{lib/*})
               watch(%r{apps/*})
             end
-CODE
+          CODE
         end
       end
 
       # Override `hanami server` command
       class Server < Hanami::CLI::Commands::Command
+        requires :env
+
         desc "Starts the server with code reloading (only development) reloader"
 
         def call(*)

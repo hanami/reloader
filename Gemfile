@@ -3,6 +3,6 @@
 source "https://rubygems.org"
 gemspec
 
-gem "hanami", git: "https://github.com/hanami/hanami.git", branch: "1.1.x"
+gem "hanami", git: "https://github.com/hanami/hanami.git", branch: "unstable"
 gem "byebug"
 gem "rubocop"
