@@ -68,10 +68,13 @@ module Hanami
 
         def call(**args)
           code_reloading = args.fetch(:code_reloading)
-          super unless code_reloading
 
-          path = Guardfile.path(args.fetch(:guardfile))
-          exec "bundle exec guard -n f -i -g #{Guardfile.group} -G #{path}"
+          if code_reloading
+            path = Guardfile.path(args.fetch(:guardfile))
+            exec "bundle exec guard -n f -i -g #{Guardfile.group} -G #{path}"
+          else
+            super
+          end
         end
       end
     end
