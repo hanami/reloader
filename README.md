@@ -20,7 +20,7 @@ Edit `Gemfile`
 
 ```ruby
 group :plugins do
-  gem "hanami-reloader", "~> 0.1"
+  gem "hanami-reloader", "~> 0.3"
 end
 ```
 

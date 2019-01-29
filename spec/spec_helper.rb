@@ -28,4 +28,5 @@ end
 $LOAD_PATH.unshift "lib"
 require "hanami/reloader"
 require "hanami/utils"
+require "hanami/devtools/integration"
 Hanami::Utils.require!("spec/support")
