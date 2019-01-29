@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "CLI: hanami generate reloader", type: :cli do
+RSpec.describe "CLI: hanami generate reloader", type: :integration do
   it "generates Guardfile" do
     with_project do
       system "bundle exec hanami generate reloader"
@@ -17,6 +17,14 @@ RSpec.describe "CLI: hanami generate reloader", type: :cli do
 CODE
 
       expect(File.read(".hanami.server.guardfile")).to eq(expected)
+    end
+  end
+
+  private
+
+  def with_project
+    super("bookshelf", gems: { "hanami-reloader" => { groups: [:plugins], path: Pathname.new(__dir__).join("..", "..", "..").realpath.to_s } }) do
+      yield
     end
   end
 end

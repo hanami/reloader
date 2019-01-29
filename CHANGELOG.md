@@ -11,6 +11,11 @@ Code reloading for Hanami
 - [Luca Guidi] `hanami generate reloader` generates `Guardfile` (instead of `.hanami.server.guardfile`), with the Guard `:server` group.
 - [Luca Guidi] `hanami server` will look for `Guardfile` at the root of the project instead of `.hanami.server.guardfile`.
 
+## v0.3.0 - 2019-01-18
+### Added
+- [Luca Guidi] Official support for Ruby 2.6.0
+- [Luca Guidi] Support for `bundler` 2.0+
+
 ## v0.2.1 - 2018-01-23
 ### Fixed
 - [Luca Guidi] Avoid Guard prompt when shutting down the server
