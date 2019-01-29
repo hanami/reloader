@@ -8,6 +8,7 @@ Code reloading for Hanami
 - [Luca Guidi] Added support for `hanami generate reloader --puma` to generate Puma specific configuration.
 
 ### Changed
+- [Luca Guidi] Drop support for Ruby: MRI 2.3, and 2.4.
 - [Luca Guidi] `hanami generate reloader` generates `Guardfile` (instead of `.hanami.server.guardfile`), with the Guard `:server` group.
 - [Luca Guidi] `hanami server` will look for `Guardfile` at the root of the project instead of `.hanami.server.guardfile`.
 
