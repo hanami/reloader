@@ -1,8 +1,9 @@
 # Hanami::Reloader
 Code reloading for Hanami
 
-## v0.3.0 - 2019-01-18
+## v0.3.0 - 2020-02-10
 ### Added
+- [Luca Guidi] Official support for Ruby 2.7.0
 - [Luca Guidi] Official support for Ruby 2.6.0
 - [Luca Guidi] Support for `bundler` 2.0+
 
