@@ -36,4 +36,7 @@ CODE
 end
 
 Hanami::CLI.register "generate reloader", Hanami::Reloader::CLI::Generate
-Hanami::CLI.register "server",            Hanami::Reloader::CLI::Server
+
+if Hanami.env == "development"
+  Hanami::CLI.register "server",          Hanami::Reloader::CLI::Server
+end
