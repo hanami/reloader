@@ -2,6 +2,10 @@
 
 **Experimental** code reloading for Hanami.
 
+## Version
+
+**This branch contains the code for `hanami-reloader` 1.0.x.**
+
 ## Usage
 
 ### 1. Setup Hanami project
