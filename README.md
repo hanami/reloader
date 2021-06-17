@@ -2,6 +2,10 @@
 
 **Experimental** code reloading for Hanami.
 
+## Version
+
+**This branch contains the code for `hanami-reloader` 0.3.x.**
+
 ## Usage
 
 ### 1. Setup Hanami project
@@ -70,4 +74,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/jodosh
 
 ## Copyright
 
-Copyright © 2017-2018 Luca Guidi – Released under MIT License
+Copyright © 2017-2021 Luca Guidi – Released under MIT License
