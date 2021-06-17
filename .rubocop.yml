@@ -1,37 +1,4 @@
-# Please keep AllCops, Bundler, Layout, Style, Metrics groups and then order cops
+# Please keep AllCops, Bundler, Style, Metrics groups and then order cops
 # alphabetically
-#
-# References:
-#   * https://github.com/bbatsov/ruby-style-guide
-#   * https://rubocop.readthedocs.io/
-AllCops:
-  DisplayCopNames: true
-  DisplayStyleGuide: true
-  ExtraDetails: false
-  TargetRubyVersion: 2.3
-Bundler/OrderedGems:
-  Enabled: false
-Metrics/BlockLength:
-  Exclude:
-    - "spec/**/*"
-Metrics/ModuleLength:
-  Exclude:
-    - "spec/**/*"
-Naming/FileName:
-  Exclude:
-    - "lib/hanami-reloader.rb"
-Style/AndOr:
-  Enabled: false
-Style/EmptyMethod:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: true
-Metrics/LineLength:
-  Enabled: false
-Style/RaiseArgs:
-  Enabled: false
-Style/RegexpLiteral:
-  Enabled: false
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+inherit_from:
+  - https://raw.githubusercontent.com/hanami/devtools/master/.rubocop-unstable.yml
