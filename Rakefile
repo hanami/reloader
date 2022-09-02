@@ -1,21 +1,12 @@
 # frozen_string_literal: true
 
-require "rake"
-require "rake/testtask"
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
-namespace :spec do
-  RSpec::Core::RakeTask.new(:unit) do |task|
-    file_list = FileList["spec/**/*_spec.rb"]
+RSpec::Core::RakeTask.new(:spec)
 
-    task.pattern = file_list
-  end
+require "rubocop/rake_task"
 
-  task :coverage do
-    ENV["COVERAGE"] = "true"
-    Rake::Task["spec:unit"].invoke
-  end
-end
+RuboCop::RakeTask.new
 
-task default: "spec:unit"
+task default: %i[spec rubocop]

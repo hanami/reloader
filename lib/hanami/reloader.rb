@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-require "hanami/cli/commands"
-
 module Hanami
   # Hanami reloader
   module Reloader
-    require "hanami/reloader/version"
-    require "hanami/reloader/cli"
+    require_relative "reloader/version"
+    require_relative "reloader/commands"
   end
 end
