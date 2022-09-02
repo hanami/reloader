@@ -15,19 +15,20 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://hanamirb.org"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 2.5.0"
+  spec.required_ruby_version = ">= 3.0"
 
-  spec.files         = `git ls-files -- lib/* CHANGELOG.md LICENSE.md README.md hanami-reloader.gemspec`.split($INPUT_RECORD_SEPARATOR)
+  spec.files         = `git ls-files -- lib/* CHANGELOG.md LICENSE.md README.md hanami-reloader.gemspec`.split($INPUT_RECORD_SEPARATOR) # rubocop:disable Layout/LineLength
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_dependency "hanami",     "~> 2.0.alpha"
-  spec.add_dependency "guard-rack", "~> 2.2"
+  spec.add_dependency "hanami-cli", "~> 2.0.beta"
 
   spec.add_development_dependency "bundler", ">= 1.6", "< 3"
   spec.add_development_dependency "rake",    "~> 13.0"
   spec.add_development_dependency "rspec",   "~> 3.7"
+  spec.add_development_dependency "rubocop", "~> 1.11"
 end
