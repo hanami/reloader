@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "hanami/cli"
 require "hanami/cli/command"
 require "hanami/cli/commands"
 require "hanami/cli/commands/app/server"
@@ -59,6 +60,7 @@ module Hanami
             CODE
           else
             fs.append "Gemfile", <<~CODE
+
               group :development do
                 gem "guard-puma"
               end
@@ -92,6 +94,6 @@ module Hanami
 end
 
 if Hanami::CLI.within_hanami_app?
-  Hanami::CLI.after "install", Hanami::Reloader::CLI::Install
-  Hanami::CLI.register "server", Hanami::Reloader::CLI::Server
+  Hanami::CLI.after "install", Hanami::Reloader::Commands::Install
+  Hanami::CLI.register "server", Hanami::Reloader::Commands::Server
 end
