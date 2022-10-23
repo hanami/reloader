@@ -74,6 +74,8 @@ module Hanami
         option :guardfile,      type: :string,  desc: "Path to Guardfile", default: Guardfile.default_path.to_s
         option :code_reloading, type: :boolean, desc: "Code reloading",    default: true
 
+        desc "Start Hanami app server"
+
         example [
           "--no-code-reloading # Disable code reloading"
         ]
