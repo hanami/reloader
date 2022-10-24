@@ -2,6 +2,12 @@
 
 Code reloading for Hanami 2
 
+## v1.0.0.beta4 - 2022-10-24
+
+### Changed
+
+- [Luca Guidi] Add help message to `hanami server` command (#14)
+
 ## v1.0.0.beta3 - 2022-09-21
 
 ### Added
