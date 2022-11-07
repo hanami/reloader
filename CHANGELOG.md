@@ -2,6 +2,12 @@
 
 Code reloading for Hanami 2
 
+## v2.0.0.rc1 - 2022-11-08
+
+### Changed
+
+- [Luca Guidi] Follow `hanami` versioning
+
 ## v1.0.0.beta4 - 2022-10-24
 
 ### Changed
