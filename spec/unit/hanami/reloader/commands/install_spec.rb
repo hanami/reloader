@@ -26,7 +26,7 @@ RSpec.describe Hanami::Reloader::Commands::Install do
       # Gemfile
       gemfile = <<~EOF
         group :development do
-          gem "guard-puma"
+          gem "guard-puma", "~> 0.8"
         end
       EOF
       expect(fs.read("Gemfile")).to include(gemfile)

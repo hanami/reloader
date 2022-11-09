@@ -62,7 +62,7 @@ module Hanami
             fs.append "Gemfile", <<~CODE
 
               group :development do
-                gem "guard-puma"
+                gem "guard-puma", "~> 0.8"
               end
             CODE
           end
