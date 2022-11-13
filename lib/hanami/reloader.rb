@@ -6,6 +6,8 @@ require "zeitwerk"
 module Hanami
   # Hanami reloader
   module Reloader
+    # @since 2.0.0
+    # @api private
     def self.gem_loader
       @gem_loader ||= Zeitwerk::Loader.new.tap do |loader|
         root = File.expand_path("..", __dir__)
