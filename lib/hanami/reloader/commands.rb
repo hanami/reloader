@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 require "hanami/cli"
-require "hanami/cli/command"
-require "hanami/cli/commands"
-require "hanami/cli/commands/app/server"
 
 module Hanami
   module Reloader
