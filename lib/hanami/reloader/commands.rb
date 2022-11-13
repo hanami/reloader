@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "hanami/cli"
-
 module Hanami
   module Reloader
     module Commands
@@ -90,9 +88,4 @@ module Hanami
       end
     end
   end
-end
-
-if Hanami::CLI.within_hanami_app?
-  Hanami::CLI.after "install", Hanami::Reloader::Commands::Install
-  Hanami::CLI.register "server", Hanami::Reloader::Commands::Server
 end

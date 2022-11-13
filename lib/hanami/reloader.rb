@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "hanami/cli"
 require "zeitwerk"
 
 module Hanami
@@ -19,6 +20,10 @@ module Hanami
     end
 
     gem_loader.setup
-    require_relative "reloader/commands"
+
+    if Hanami::CLI.within_hanami_app?
+      Hanami::CLI.after "install", Commands::Install
+      Hanami::CLI.register "server", Commands::Server
+    end
   end
 end
