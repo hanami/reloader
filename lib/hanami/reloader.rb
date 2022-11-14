@@ -22,6 +22,7 @@ module Hanami
     end
 
     gem_loader.setup
+    require_relative "reloader/version"
 
     if Hanami::CLI.within_hanami_app?
       Hanami::CLI.after "install", Commands::Install
