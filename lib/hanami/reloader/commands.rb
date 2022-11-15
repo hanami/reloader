@@ -22,12 +22,19 @@ module Hanami
       class Install < Hanami::CLI::Command
         desc "Generate configuration for code reloading"
 
+        def initialize(fs: Dry::Files.new, bundler: CLI::Bundler.new(fs: fs), **args)
+          super(fs: fs, **args)
+          @bundler = bundler
+        end
+
         def call(*, **)
           generate_configuration(Guardfile.default_path)
           bundle_gems
         end
 
         private
+
+        attr_reader :bundler
 
         def generate_configuration(path)
           fs.write path, <<~CODE
@@ -47,6 +54,7 @@ module Hanami
         def bundle_gems
           fs.touch("Gemfile")
           gemfile = fs.read("Gemfile")
+
           return if gemfile.include?("guard-puma")
 
           if gemfile.include?("group :development do")
@@ -61,6 +69,8 @@ module Hanami
               end
             CODE
           end
+
+          bundler.install!
         end
       end
 
