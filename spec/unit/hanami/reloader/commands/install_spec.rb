@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require "hanami/reloader/commands"
-require "hanami/cli/bundler"
-
 require "tmpdir"
 
 RSpec.describe Hanami::Reloader::Commands::Install do
@@ -30,7 +27,7 @@ RSpec.describe Hanami::Reloader::Commands::Install do
       # Gemfile
       gemfile = <<~EOF
         group :development do
-          gem "guard-puma"
+          gem "guard-puma", "~> 0.8"
         end
       EOF
       expect(fs.read("Gemfile")).to include(gemfile)
