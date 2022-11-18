@@ -2,6 +2,14 @@
 
 Code reloading for Hanami 2
 
+## v2.0.0 - 2022-11-22
+
+### Added
+
+- [Tim Riley] Use Zeitwerk to autoload the gem
+- [Luca Guidi] Generate new apps by requiring `guard-puma` `~> 0.8`
+- [Tim Riley] Run bundle install after modifying `Gemfile`
+
 ## v2.0.0.rc1 - 2022-11-08
 
 ### Changed
