@@ -76,6 +76,14 @@ module Hanami
 
       # Override `hanami server` command
       class Server < Hanami::CLI::Commands::App::Server
+        # @since 2.0.0
+        # @api private
+        DEFAULT_GUARD_PUMA_OPTIONS = ["-n", "f", "-i", "-g", Guardfile.group, "-G"].freeze
+
+        # @since 2.0.0
+        # @api private
+        OPTIONS_SEPARATOR = " "
+
         option :guardfile,      type: :string,  desc: "Path to Guardfile", default: Guardfile.default_path.to_s
         option :code_reloading, type: :boolean, desc: "Code reloading",    default: true
 
@@ -89,11 +97,23 @@ module Hanami
           code_reloading = args.fetch(:code_reloading)
 
           if code_reloading
-            path = Guardfile.path(args.fetch(:guardfile))
-            exec "bundle exec guard -n f -i -g #{Guardfile.group} -G #{path}"
+            guard_puma_env_vars!(**args)
+            exec "bundle exec guard #{guard_puma_options(**args)}"
           else
             super
           end
+        end
+
+        private
+
+        def guard_puma_env_vars!(**args)
+          ENV["HANAMI_PORT"] = args.fetch(:port).to_s
+        end
+
+        def guard_puma_options(**args)
+          options = DEFAULT_GUARD_PUMA_OPTIONS.dup
+          options.push(Guardfile.path(args.fetch(:guardfile)))
+          options.join(OPTIONS_SEPARATOR)
         end
       end
     end

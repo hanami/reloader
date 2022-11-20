@@ -10,6 +10,10 @@ Code reloading for Hanami 2
 - [Luca Guidi] Generate new apps by requiring `guard-puma` `~> 0.8`
 - [Tim Riley] Run bundle install after modifying `Gemfile`
 
+### Fixed
+
+- [Luca Guidi] Ensure to use the given HTTP port
+
 ## v2.0.0.rc1 - 2022-11-08
 
 ### Changed
