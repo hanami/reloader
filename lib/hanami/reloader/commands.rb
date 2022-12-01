@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "hanami/port"
+
 module Hanami
   module Reloader
     module Commands
@@ -41,7 +43,7 @@ module Hanami
             # frozen_string_literal: true
 
             group :#{Guardfile.group} do
-              guard "puma", port: ENV["HANAMI_PORT"] || 2300 do
+              guard "puma", port: ENV.fetch("#{Hanami::Port::ENV_VAR}", #{Hanami::Port::DEFAULT}) do
                 watch(%r{config/*})
                 watch(%r{lib/*})
                 watch(%r{app/*})
@@ -107,7 +109,7 @@ module Hanami
         private
 
         def guard_puma_env_vars!(**args)
-          ENV["HANAMI_PORT"] = args.fetch(:port).to_s
+          Hanami::Port.call!(args.fetch(:port))
         end
 
         def guard_puma_options(**args)
