@@ -61,4 +61,4 @@ Everyone interacting in the `Hanami::Reloader` project's codebases, issue tracke
 
 ## Copyright
 
-Copyright © 2014-2022 Hanami Team – Released under MIT License
+Copyright © 2014 Hanami Team – Released under MIT License
