@@ -46,8 +46,10 @@ module Hanami
               guard "puma", port: ENV.fetch("#{Hanami::Port::ENV_VAR}", #{Hanami::Port::DEFAULT}) do
                 watch(%r{config/*})
                 watch(%r{lib/*})
-                watch(%r{app/*})
-                watch(%r{slices/*})
+                watch(%r{app/[^/]+.rb})
+                watch(%r{app/templates/.+..+..+})
+                watch(%r{slices/.+/.+.rb})
+                watch(%r{slices/.+/templates/.+..+..+})
               end
             end
           CODE
