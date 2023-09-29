@@ -2,6 +2,12 @@
 
 Code reloading for Hanami 2
 
+## v2.1.0.beta2 - 2023-10-04
+
+### Added
+
+- [Luca Guidi] When running `hanami new`, generate `Guardfile` that excludes static assets from triggering an app reload
+
 ## v2.1.0.beta1 - 2023-06-29
 
 ## v2.0.2 - 2022-12-25

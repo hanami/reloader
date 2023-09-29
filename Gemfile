@@ -5,6 +5,7 @@ gemspec
 
 unless ENV["CI"]
   gem "byebug", require: false
+  gem "yard", require: false
 end
 
 gem "hanami-utils", "~> 2.0", require: false, git: "https://github.com/hanami/utils.git",  branch: "main"
