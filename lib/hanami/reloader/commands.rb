@@ -46,15 +46,13 @@ module Hanami
         attr_reader :bundler
 
         def generate_configuration(path)
-          require "hanami/version"
-
           fs.write path, <<~CODE
             # frozen_string_literal: true
 
             group :#{Guardfile.group} do
               guard "puma", port: ENV.fetch("#{Hanami::Port::ENV_VAR}", #{Hanami::Port::DEFAULT}) do
                 # Edit the following regular expression for your needs.
-                # See: https://guides.hanamirb.org/v#{Hanami::Version.major_minor}/app/code-reloading/
+                # See: https://guides.hanamirb.org/app/code-reloading/
                 watch(%r{^(app|config|lib|slices)([\\/][^\\/]+)*.(rb|erb|haml|slim)$}i)
               end
             end
