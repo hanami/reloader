@@ -22,6 +22,10 @@ module Hanami
 
       # Generate hanami-reloader configuration
       class Install < Hanami::CLI::Command
+        # @api private
+        # @since 2.1.0
+        MATCHER = %r{^(app|config|lib|slices)([\\/][^\\/]+)*\.(rb|erb|haml|slim)$}i
+
         desc "Generate configuration for code reloading"
 
         def initialize(fs: Dry::Files.new, bundler: CLI::Bundler.new(fs: fs), **args)
@@ -44,12 +48,7 @@ module Hanami
 
             group :#{Guardfile.group} do
               guard "puma", port: ENV.fetch("#{Hanami::Port::ENV_VAR}", #{Hanami::Port::DEFAULT}) do
-                watch(%r{config/*})
-                watch(%r{lib/*})
-                watch(%r{app/[^/]+.rb})
-                watch(%r{app/templates/.+..+..+})
-                watch(%r{slices/.+/.+.rb})
-                watch(%r{slices/.+/templates/.+..+..+})
+                watch(%r{^(app|config|lib|slices)([\\/][^\\/]+)*.(rb|erb|haml|slim)$}i)
               end
             end
           CODE
