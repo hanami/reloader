@@ -24,6 +24,9 @@ module Hanami
       class Install < Hanami::CLI::Command
         # @api private
         # @since 2.1.0
+        #
+        # NOTE: Any change to this constant MUST be reflected in the `#generate_configuration` method,
+        #       by copying and pasting this regex.
         MATCHER = %r{^(app|config|lib|slices)([\\/][^\\/]+)*\.(rb|erb|haml|slim)$}i
 
         desc "Generate configuration for code reloading"
