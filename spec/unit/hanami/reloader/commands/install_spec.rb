@@ -40,6 +40,8 @@ RSpec.describe Hanami::Reloader::Commands::Install do
 
         group :server do
           guard "puma", port: ENV.fetch("HANAMI_PORT", 2300) do
+            # Edit the following regular expression for your needs.
+            # See: https://guides.hanamirb.org/v2.1/app/code-reloading/
             watch(#{matcher})
           end
         end
