@@ -33,17 +33,16 @@ RSpec.describe Hanami::Reloader::Commands::Install do
       expect(fs.read("Gemfile")).to include(gemfile)
 
       # Guardfile
+      matcher = Hanami::Reloader::Commands::Install::MATCHER.inspect.gsub("/^", "^").gsub("$/i", "$}i").gsub('*\\.', "*.").gsub("\\\\\\", %(\\))
+      matcher = %(%r{#{matcher})
       guardfile = <<~EOF
         # frozen_string_literal: true
 
         group :server do
           guard "puma", port: ENV.fetch("HANAMI_PORT", 2300) do
-            watch(%r{config/*})
-            watch(%r{lib/*})
-            watch(%r{app/[^/]+.rb})
-            watch(%r{app/templates/.+..+..+})
-            watch(%r{slices/.+/.+.rb})
-            watch(%r{slices/.+/templates/.+..+..+})
+            # Edit the following regular expression for your needs.
+            # See: https://guides.hanamirb.org/app/code-reloading/
+            watch(#{matcher})
           end
         end
       EOF
