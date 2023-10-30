@@ -2,6 +2,13 @@
 
 Code reloading for Hanami 2
 
+## v2.1.0.rc1 - 2023-11-01
+
+### Fixed
+
+- [Luca Guidi] Ensure to reload app when actions, views, and templates, are touched.
+- [Luca Guidi] Fixed incorrect regular expression in `Guardfile`
+
 ## v2.1.0.beta2 - 2023-10-04
 
 ### Added
