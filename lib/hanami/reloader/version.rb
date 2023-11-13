@@ -2,6 +2,8 @@
 
 module Hanami
   module Reloader
-    VERSION = "2.1.0.rc2"
+    # @since 0.1.0
+    # @api public
+    VERSION = "2.1.0"
   end
 end

@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_dependency "hanami-cli", "~> 2.1.rc"
+  spec.add_dependency "hanami-cli", "~> 2.1"
   spec.add_dependency "zeitwerk", "~> 2.6"
 
   spec.add_development_dependency "bundler", ">= 1.6", "< 3"
