@@ -2,6 +2,6 @@
 
 RSpec.describe "Hanami::Reloader::VERSION" do
   it "exposes version" do
-    expect(Hanami::Reloader::VERSION).to eq("2.2.0.beta2")
+    expect(Hanami::Reloader::VERSION).to eq("2.2.0.rc1")
   end
 end
