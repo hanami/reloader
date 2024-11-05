@@ -2,6 +2,12 @@
 
 Code reloading for Hanami 2
 
+## v2.2.0 - 2024-11-05
+
+### Added
+
+- [Tim Riley] Depend on specific minimum guard and guard-puma versions via gemspec. This ensures that certain bundle gem deprecation warnings do not show when running `hanami server`. (#30)
+
 ## v2.2.0.rc1 - 2024-10-29
 
 ## v2.2.0.beta2 - 2024-07-16
