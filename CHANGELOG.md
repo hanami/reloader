@@ -2,6 +2,8 @@
 
 Code reloading for Hanami 2
 
+## v2.3.0.beta1 - Unreleased
+
 ## v2.2.0 - 2024-11-05
 
 ### Added
