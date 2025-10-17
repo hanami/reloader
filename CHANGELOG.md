@@ -2,6 +2,13 @@
 
 Code reloading for Hanami 2
 
+## v2.3.0.beta2 - 2025-10-17
+
+### Changed
+
+- [Andrea Fomera] Pass HANAMI_ENV from ENV to guard-puma in generated `Guardfile`. (#33)
+- Drop support for Ruby 3.1
+
 ## v2.3.0.beta1 - 2025-10-03
 
 ## v2.2.0 - 2024-11-05
