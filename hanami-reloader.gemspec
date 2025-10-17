@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://hanamirb.org"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 3.1"
+  spec.required_ruby_version = ">= 3.2"
 
   spec.files         = `git ls-files -- lib/* CHANGELOG.md LICENSE.md README.md hanami-reloader.gemspec`.split($INPUT_RECORD_SEPARATOR) # rubocop:disable Layout/LineLength
   spec.bindir        = "exe"
